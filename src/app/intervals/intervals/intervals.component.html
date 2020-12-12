@@ -1,0 +1,30 @@
+<div class="pa-10">
+  <div style="background-color: #ffffff; max-width: 500px;" class="pa-12 m-auto" [class.mat-elevation-z5]="true">
+    <div class="w-100 text-center mb-5">
+      <h1 *ngIf="!loadingMoneyInterval" [ngStyle]="{ color: money | moneyColor }">{{ money | currency }}</h1>
+      <h2 class="mt-5" *ngIf="loadingMoneyInterval">Cargando...</h2>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="10px">
+      <mat-form-field 
+        appearance="outline"
+        floatLabel="always"
+        hideRequiredMarker
+      >
+        <mat-label>Seleccione el inicio del intervalo</mat-label>
+        <input matInput [matDatepicker]="date1" [formControl]="startDate" (dateChange)="requestMoney()">
+        <mat-datepicker-toggle matSuffix [for]="date1"></mat-datepicker-toggle>
+        <mat-datepicker #date1></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        hideRequiredMarker
+      >
+        <mat-label>Seleccione el fin del intervalo</mat-label>
+        <input matInput [matDatepicker]="date2" [formControl]="endDate" (dateChange)="requestMoney()">
+        <mat-datepicker-toggle matSuffix [for]="date2"></mat-datepicker-toggle>
+        <mat-datepicker #date2></mat-datepicker>
+      </mat-form-field>  
+    </div>
+  </div>
+</div>

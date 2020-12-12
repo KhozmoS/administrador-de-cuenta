@@ -1,0 +1,24 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/spec",
+    "module": "commonjs",
+    "types": [
+      "jasmine",
+      "node"
+    ]
+  },
+  "files": [
+    "test.ts",
+    "polyfills-test.ts"
+  ],
+  "include": [
+    "**/*.spec.ts",
+    "**/*.d.ts", "app/shared/models/message.model.ts", "app/shared/models/index.ts"
+  ],
+  "exclude": [
+    "dist",
+    "release",
+    "node_modules"
+  ]
+}

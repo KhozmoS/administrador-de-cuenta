@@ -1,0 +1,18 @@
+#calendar-box {  
+  .calendar {
+    max-width: 600px;
+    min-width: 350px;
+    .day {
+      cursor: pointer;      
+      color: #ffffff;
+      display: inline-block;
+      border-radius: 2px;
+      span {
+        float: right;
+      }
+    }
+    .day:hover {
+      opacity: 0.95;
+    }
+  }
+}

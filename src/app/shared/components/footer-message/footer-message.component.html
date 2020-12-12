@@ -1,0 +1,8 @@
+<footer [ngClass]="!!message ? 'shown' : 'hiden'">
+  <div    
+    [style.background-color]="color"
+  >
+    <p>{{ message }}</p>
+    <p class="closeBtn" (click)="close()">&times;</p>
+  </div>
+</footer>

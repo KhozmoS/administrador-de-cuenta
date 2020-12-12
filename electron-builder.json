@@ -1,0 +1,41 @@
+{
+  "productName": "administrador de cuenta",
+  "directories": {
+    "output": "release/"
+  },
+    "files": [
+        "**/*",
+        "!**/*.ts",
+        "!*.code-workspace",
+        "!LICENSE.md",
+        "!package.json",
+        "!package-lock.json",
+        "!src/",
+        "!e2e/",
+        "!hooks/",
+        "!angular.json",
+        "!_config.yml",
+        "!karma.conf.js",
+        "!tsconfig.json",
+        "!tslint.json"
+    ],
+  "extraResources": ["src/data/money-update.db"],
+  "win": {
+    "icon": "dist/assets/icons/favicon.ico",
+    "target": [
+      "portable"
+    ]
+  },
+  "mac": {
+    "icon": "dist/assets/icons",
+    "target": [
+      "dmg"
+    ]
+  },
+  "linux": {
+    "icon": "dist/assets/icons",
+    "target": [
+      "AppImage"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+<div id="calendar-box">
+  <div class="ma-10" fxLayout="row wrap" fxLayoutAlign="space-between">
+    <button 
+      class="float-left"
+      mat-stroked-button 
+      color="primary" 
+      (click)="onPrevMonth()"
+    > 
+      Anterior
+    </button>
+    <span class="font-size-24">{{ calendarCreator.getMonthName(monthNumber) }} &nbsp; {{ year }}</span>
+    <button
+      mat-stroked-button
+      color="primary" 
+      aria-label="Example icon button" 
+      (click)="onNextMonth()"
+    > 
+      Siguiente
+    </button>
+  </div>
+  <br>
+  <h1 class="text-center" style="text-decoration: underline;">Total en el mes: {{ monthTotalMoney }}</h1>
+  <div class="ma-10">
+    <div class="calendar m-auto" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="1px">
+      <div fxFlex="14%" *ngFor='let weekDay of weekDaysName' class="mb-1 text-center">
+        <h2>{{ weekDay }}</h2>
+      </div>
+      <div 
+        fxFlex="14%" 
+        *ngFor='let day of monthDays'
+        class="day mb-1 text-center"
+        [ngClass]="day.isToday?'bg-primary':'bg-dark'"
+        (click)="goToDayDetails(day)"
+      >
+        <p class="pa-4 font-size-20">
+          <strong [ngStyle]="{ color: day.balance | moneyColor: '#ffffff' }">{{ day.balance }}</strong>
+        </p>
+        <span class="font-size-10 pa-1">{{ day.number }}</span>
+      </div>
+    </div>
+  </div>
+</div>

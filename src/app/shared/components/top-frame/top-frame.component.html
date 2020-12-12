@@ -1,0 +1,26 @@
+<header class="bg-primary">
+  <strong>
+    <img src="./assets/icons/favicon.ico">
+  </strong>
+  <nav>
+    <ul>
+      <li (click)="minimizeWindow()"><img src="./assets/btn-min.svg" id="min"></li>
+      <li (click)="closeWindow()"><img src="./assets/btn-close.svg"></li>
+    </ul>
+  </nav>
+  <div id="top-menu" class="bg-dark">
+    <ul>
+      <li>
+        <a [routerLink]="['/home']" routerLinkActive="active">inicio</a>
+      </li>
+      <li>
+        <a [routerLink]="['/calendar']" routerLinkActive="active">calendario</a>
+      </li>
+      <li>
+        <a [routerLink]="['/intervals']" routerLinkActive="active">intervalos</a>
+      </li>
+    </ul>
+  </div>
+</header>
+<div id="relleno">
+</div>
